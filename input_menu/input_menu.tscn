@@ -156,7 +156,6 @@ margin_right = 300.0
 margin_bottom = 115.0
 
 [node name="KeyInput" type="Label" parent="InputSelector/MarginContainer/VBoxContainer"]
-visible = false
 margin_right = 292.0
 margin_bottom = 92.0
 rect_min_size = Vector2( 0, 64 )
@@ -167,7 +166,6 @@ valign = 1
 script = ExtResource( 10 )
 
 [node name="JoyButton" type="HBoxContainer" parent="InputSelector/MarginContainer/VBoxContainer"]
-visible = false
 margin_right = 292.0
 margin_bottom = 42.0
 size_flags_horizontal = 3
@@ -210,7 +208,6 @@ margin_right = 130.0
 margin_bottom = 40.0
 
 [node name="JoyAxis" type="HBoxContainer" parent="InputSelector/MarginContainer/VBoxContainer"]
-visible = false
 margin_right = 292.0
 margin_bottom = 65.0
 size_flags_horizontal = 3
