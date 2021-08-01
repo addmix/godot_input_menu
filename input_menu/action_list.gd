@@ -45,11 +45,11 @@ func rebuild() -> void:
 	
 	
 	#iterate through ActionEvents
-	var actions : Array = InputMap.get_actions()
-	for action in actions:
+	var _actions : Array = InputMap.get_actions()
+	for action in _actions:
 		add_action_to_tree(action)
 
-func _on_Tree_button_pressed(item : TreeItem, column : int, id : int):
+func _on_Tree_button_pressed(item : TreeItem, _column : int, id : int):
 	match id:
 		#add
 		0:

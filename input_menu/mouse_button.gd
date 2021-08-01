@@ -21,12 +21,12 @@ func _ready() -> void:
 	event.device = Devices.selected - 1
 
 
-func _on_Buttons_item_selected(index : int) -> void:
+func _on_Buttons_item_selected(_index : int) -> void:
 	event = InputEventMouseButton.new()
 	event.button_index = Buttons.selected + 1
 	event.device = Devices.selected - 1
 
-func _on_Devices_item_selected(index : int) -> void:
+func _on_Devices_item_selected(_index : int) -> void:
 	event = InputEventMouseButton.new()
 	event.button_index = Buttons.selected + 1
 	event.device = Devices.selected - 1

@@ -13,8 +13,10 @@ func _ready() -> void:
 	
 	for i in range(20):
 		if i % 2 == 0:
+# warning-ignore:integer_division
 			Buttons.add_item("Axis " + str(i / 2) + " -")
 		else:
+# warning-ignore:integer_division
 			Buttons.add_item("Axis " + str(i / 2) + " +")
 		
 	
@@ -23,12 +25,12 @@ func _ready() -> void:
 	event.device = Devices.selected - 1
 
 
-func _on_Buttons_item_selected(index : int) -> void:
+func _on_Buttons_item_selected(_index : int) -> void:
 	event = InputEventJoypadMotion.new()
 	event.axis = Buttons.selected
 	event.device = Devices.selected - 1
 
-func _on_Devices_item_selected(index : int) -> void:
+func _on_Devices_item_selected(_index : int) -> void:
 	event = InputEventJoypadMotion.new()
 	event.axis = Buttons.selected
 	event.device = Devices.selected - 1
