@@ -99,7 +99,7 @@ func add_action_to_tree(action : String = "") -> void:
 	tree_action.set_cell_mode(1, TreeItem.CELL_MODE_RANGE)
 	tree_action.set_range_config(1, 0.0, 1.0, .01)
 	tree_action.set_editable(1, true)
-	tree_action.set_range(1, 0.5)
+	tree_action.set_range(1, InputMap.action_get_deadzone(action))
 	
 	#iterate through Actions of the current ActionEvent
 	var inputs : Array = InputMap.get_action_list(action)

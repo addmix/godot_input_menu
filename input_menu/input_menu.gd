@@ -20,7 +20,7 @@ func popup_input_selector(item : TreeItem) -> void:
 
 func return_input(event : InputEvent) -> void:
 	var metadata : Dictionary = edit_item.get_metadata(0)
-	print(metadata)
+#	print(metadata)
 	#is add input
 	if metadata.has("action"):
 		#action doesn't have event
