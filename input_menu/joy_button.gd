@@ -1,7 +1,7 @@
 extends HBoxContainer
 
-onready var Devices : OptionButton = $Left/Devices
-onready var Buttons : OptionButton = $Right/Buttons
+@onready var Devices : OptionButton = $Left/Devices
+@onready var Buttons : OptionButton = $Right/Buttons
 
 
 var event : InputEvent

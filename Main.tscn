@@ -1,17 +1,14 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=3 format=3 uid="uid://ck2uyupgvanhb"]
 
-[ext_resource path="res://Main.gd" type="Script" id=1]
-[ext_resource path="res://input_menu/input_menu.tscn" type="PackedScene" id=2]
+[ext_resource type="Script" path="res://Main.gd" id="1"]
+[ext_resource type="PackedScene" uid="uid://4072qlp5fpcg" path="res://input_menu/input_menu.tscn" id="2"]
 
 [node name="Main" type="Node2D"]
-script = ExtResource( 1 )
+script = ExtResource( "1" )
 
-[node name="InputMenu" parent="." instance=ExtResource( 2 )]
-visible = true
+[node name="InputMenu" parent="." instance=ExtResource( "2" )]
 
 [node name="Button" type="Button" parent="."]
-margin_right = 173.0
-margin_bottom = 59.0
 text = "Open menu"
 __meta__ = {
 "_edit_use_anchors_": false

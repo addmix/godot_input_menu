@@ -1,0 +1,10 @@
+res://Main.gd
+res://Main.tscn
+res://input_menu/action_list.gd
+res://input_menu/add_action.gd
+res://input_menu/apply_revert.gd
+res://input_menu/edit_input.gd
+res://input_menu/input_menu.gd
+res://input_menu/input_menu.tscn
+res://input_menu/joy_axis.gd
+res://input_menu/key_input.gd

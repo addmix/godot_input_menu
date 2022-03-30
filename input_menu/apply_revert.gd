@@ -1,6 +1,6 @@
 extends HBoxContainer
 
-onready var InputMenu : WindowDialog = find_parent("InputMenu")
+@onready var InputMenu : Window = find_parent("InputMenu")
 
 #connect to apply settings func
 func _on_Apply_pressed() -> void:

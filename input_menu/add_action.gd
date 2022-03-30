@@ -2,8 +2,8 @@ extends HBoxContainer
 
 signal add_action
 
-onready var _LineEdit : LineEdit = $LineEdit
-onready var WarningLable : Label = $WarningLabel
+@onready var _LineEdit : LineEdit = $LineEdit
+@onready var WarningLable : Label = $WarningLabel
 
 func _on_LineEdit_text_changed(new_text : String) -> void:
 	#when input already exists

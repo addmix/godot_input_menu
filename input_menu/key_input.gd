@@ -1,6 +1,6 @@
 extends Label
 
-onready var InputSelector : WindowDialog = find_parent("InputSelector")
+@onready var InputSelector : Window = find_parent("InputSelector")
 
 var event : InputEvent = InputEventKey.new()
 

@@ -1,322 +1,289 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=14 format=3 uid="uid://4072qlp5fpcg"]
 
-[ext_resource path="res://input_menu/input_menu.gd" type="Script" id=1]
-[ext_resource path="res://input_menu/add_action.gd" type="Script" id=2]
-[ext_resource path="res://input_menu/apply_revert.gd" type="Script" id=3]
-[ext_resource path="res://input_menu/action_list.gd" type="Script" id=4]
-[ext_resource path="res://input_menu/edit_input.gd" type="Script" id=5]
-[ext_resource path="res://input_menu/icon_keyboard.svg" type="Texture" id=6]
-[ext_resource path="res://input_menu/icon_joy_axis.svg" type="Texture" id=7]
-[ext_resource path="res://input_menu/icon_joy_button.svg" type="Texture" id=8]
-[ext_resource path="res://input_menu/icon_mouse.svg" type="Texture" id=9]
-[ext_resource path="res://input_menu/key_input.gd" type="Script" id=10]
-[ext_resource path="res://input_menu/joy_button.gd" type="Script" id=11]
-[ext_resource path="res://input_menu/mouse_button.gd" type="Script" id=12]
-[ext_resource path="res://input_menu/joy_axis.gd" type="Script" id=13]
+[ext_resource type="Script" path="res://input_menu/input_menu.gd" id="1"]
+[ext_resource type="Script" path="res://input_menu/add_action.gd" id="2"]
+[ext_resource type="Script" path="res://input_menu/apply_revert.gd" id="3"]
+[ext_resource type="Script" path="res://input_menu/action_list.gd" id="4"]
+[ext_resource type="Script" path="res://input_menu/edit_input.gd" id="5"]
+[ext_resource type="Texture2D" uid="uid://exlfdd7842hb" path="res://input_menu/icon_keyboard.svg" id="6"]
+[ext_resource type="Texture2D" uid="uid://cwjndi1v0703s" path="res://input_menu/icon_joy_axis.svg" id="7"]
+[ext_resource type="Texture2D" uid="uid://c6714c8ipijob" path="res://input_menu/icon_joy_button.svg" id="8"]
+[ext_resource type="Texture2D" uid="uid://bjihtctt08h0p" path="res://input_menu/icon_mouse.svg" id="9"]
+[ext_resource type="Script" path="res://input_menu/key_input.gd" id="10"]
+[ext_resource type="Script" path="res://input_menu/joy_button.gd" id="11"]
+[ext_resource type="Script" path="res://input_menu/mouse_button.gd" id="12"]
+[ext_resource type="Script" path="res://input_menu/joy_axis.gd" id="13"]
 
-[node name="InputMenu" type="WindowDialog"]
-margin_right = 633.0
-margin_bottom = 417.0
-popup_exclusive = true
-window_title = "Input Map"
-resizable = true
-script = ExtResource( 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="InputMenu" type="Window"]
+script = ExtResource( "1" )
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-custom_constants/margin_right = 8
-custom_constants/margin_top = 8
-custom_constants/margin_left = 8
-custom_constants/margin_bottom = 8
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
-margin_left = 8.0
-margin_top = 8.0
-margin_right = 625.0
-margin_bottom = 409.0
+offset_right = 1024.0
+offset_bottom = 600.0
 
 [node name="AddAction" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
-margin_right = 617.0
-margin_bottom = 24.0
+offset_right = 1024.0
+offset_bottom = 31.0
 size_flags_vertical = 0
-script = ExtResource( 2 )
+script = ExtResource( "2" )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Action" type="Label" parent="MarginContainer/VBoxContainer/AddAction"]
-margin_top = 5.0
-margin_right = 45.0
-margin_bottom = 19.0
+offset_top = 2.0
+offset_right = 54.0
+offset_bottom = 28.0
 text = "Action:"
 
 [node name="LineEdit" type="LineEdit" parent="MarginContainer/VBoxContainer/AddAction"]
-margin_left = 49.0
-margin_right = 572.0
-margin_bottom = 24.0
+offset_left = 58.0
+offset_right = 976.0
+offset_bottom = 31.0
 size_flags_horizontal = 3
+caret_blink = true
+caret_blink_speed = 0.5
 
 [node name="WarningLabel" type="Label" parent="MarginContainer/VBoxContainer/AddAction"]
-margin_left = 576.0
-margin_top = 5.0
-margin_right = 576.0
-margin_bottom = 19.0
-custom_colors/font_color = Color( 1, 0, 0, 1 )
+offset_left = 980.0
+offset_top = 4.0
+offset_right = 981.0
+offset_bottom = 27.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Add" type="Button" parent="MarginContainer/VBoxContainer/AddAction"]
-margin_left = 580.0
-margin_right = 617.0
-margin_bottom = 24.0
+offset_left = 985.0
+offset_right = 1024.0
+offset_bottom = 31.0
 text = "Add"
 
 [node name="ActionList" type="PanelContainer" parent="MarginContainer/VBoxContainer"]
-margin_top = 28.0
-margin_right = 617.0
-margin_bottom = 377.0
+offset_top = 35.0
+offset_right = 1024.0
+offset_bottom = 565.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/ActionList"]
-margin_left = 7.0
-margin_top = 7.0
-margin_right = 610.0
-margin_bottom = 342.0
+offset_right = 1024.0
+offset_bottom = 530.0
 
 [node name="Tree" type="Tree" parent="MarginContainer/VBoxContainer/ActionList/MarginContainer"]
-margin_right = 603.0
-margin_bottom = 335.0
+offset_right = 1024.0
+offset_bottom = 530.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 columns = 3
-script = ExtResource( 4 )
+script = ExtResource( "4" )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="ApplyRevert" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
-margin_top = 381.0
-margin_right = 617.0
-margin_bottom = 401.0
+offset_top = 569.0
+offset_right = 1024.0
+offset_bottom = 600.0
 size_flags_vertical = 0
-script = ExtResource( 3 )
+script = ExtResource( "3" )
 
 [node name="Apply" type="Button" parent="MarginContainer/VBoxContainer/ApplyRevert"]
-margin_right = 48.0
-margin_bottom = 20.0
+offset_right = 52.0
+offset_bottom = 31.0
 text = "Apply"
 
 [node name="Revert" type="Button" parent="MarginContainer/VBoxContainer/ApplyRevert"]
-margin_left = 52.0
-margin_right = 105.0
-margin_bottom = 20.0
+offset_left = 56.0
+offset_right = 115.0
+offset_bottom = 31.0
 text = "Revert"
 
 [node name="Cancel" type="Button" parent="MarginContainer/VBoxContainer/ApplyRevert"]
-margin_left = 109.0
-margin_right = 163.0
-margin_bottom = 20.0
+offset_left = 119.0
+offset_right = 179.0
+offset_bottom = 31.0
 text = "Cancel"
 
-[node name="InputSelector" type="WindowDialog" parent="."]
+[node name="InputSelector" type="Window" parent="."]
 process_priority = -10000
-visible = true
-margin_right = 308.0
-margin_bottom = 123.0
-window_title = "Edit Input"
-script = ExtResource( 5 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
+disable_3d = true
+script = ExtResource( "5" )
 
 [node name="MarginContainer" type="MarginContainer" parent="InputSelector"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-custom_constants/margin_right = 8
-custom_constants/margin_top = 8
-custom_constants/margin_left = 8
-custom_constants/margin_bottom = 8
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="VBoxContainer" type="VBoxContainer" parent="InputSelector/MarginContainer"]
-margin_left = 8.0
-margin_top = 8.0
-margin_right = 300.0
-margin_bottom = 115.0
+offset_right = 1024.0
+offset_bottom = 600.0
 
 [node name="KeyInput" type="Label" parent="InputSelector/MarginContainer/VBoxContainer"]
-margin_right = 292.0
-margin_bottom = 92.0
-rect_min_size = Vector2( 0, 64 )
+offset_right = 1024.0
+offset_bottom = 138.0
 size_flags_vertical = 3
 text = "Press a key..."
-align = 1
-valign = 1
-script = ExtResource( 10 )
+script = ExtResource( "10" )
 
 [node name="JoyButton" type="HBoxContainer" parent="InputSelector/MarginContainer/VBoxContainer"]
-margin_right = 292.0
-margin_bottom = 42.0
+offset_top = 142.0
+offset_right = 1024.0
+offset_bottom = 280.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 alignment = 1
-script = ExtResource( 11 )
+script = ExtResource( "11" )
 
 [node name="Left" type="VBoxContainer" parent="InputSelector/MarginContainer/VBoxContainer/JoyButton"]
-margin_left = 55.0
-margin_right = 103.0
-margin_bottom = 42.0
+offset_left = 401.0
+offset_right = 457.0
+offset_bottom = 138.0
 alignment = 1
 
 [node name="Device" type="Label" parent="InputSelector/MarginContainer/VBoxContainer/JoyButton/Left"]
-margin_top = 2.0
-margin_right = 48.0
-margin_bottom = 16.0
+offset_top = 38.0
+offset_right = 56.0
+offset_bottom = 64.0
 text = "Device:"
 
 [node name="Devices" type="OptionButton" parent="InputSelector/MarginContainer/VBoxContainer/JoyButton/Left"]
-margin_top = 20.0
-margin_right = 48.0
-margin_bottom = 40.0
+offset_top = 68.0
+offset_right = 56.0
+offset_bottom = 99.0
 
 [node name="Right" type="VBoxContainer" parent="InputSelector/MarginContainer/VBoxContainer/JoyButton"]
-margin_left = 107.0
-margin_right = 237.0
-margin_bottom = 42.0
+offset_left = 461.0
+offset_right = 622.0
+offset_bottom = 138.0
 alignment = 1
 
 [node name="buttons" type="Label" parent="InputSelector/MarginContainer/VBoxContainer/JoyButton/Right"]
-margin_top = 2.0
-margin_right = 130.0
-margin_bottom = 16.0
+offset_top = 38.0
+offset_right = 161.0
+offset_bottom = 64.0
 text = "Joypad button index:"
 
 [node name="Buttons" type="OptionButton" parent="InputSelector/MarginContainer/VBoxContainer/JoyButton/Right"]
-margin_top = 20.0
-margin_right = 130.0
-margin_bottom = 40.0
+offset_top = 68.0
+offset_right = 161.0
+offset_bottom = 99.0
 
 [node name="JoyAxis" type="HBoxContainer" parent="InputSelector/MarginContainer/VBoxContainer"]
-margin_right = 292.0
-margin_bottom = 65.0
+offset_top = 284.0
+offset_right = 1024.0
+offset_bottom = 422.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 alignment = 1
-script = ExtResource( 13 )
+script = ExtResource( "13" )
 
 [node name="Left" type="VBoxContainer" parent="InputSelector/MarginContainer/VBoxContainer/JoyAxis"]
-margin_left = 63.0
-margin_right = 111.0
-margin_bottom = 65.0
+offset_left = 412.0
+offset_right = 468.0
+offset_bottom = 138.0
 alignment = 1
 
 [node name="Device" type="Label" parent="InputSelector/MarginContainer/VBoxContainer/JoyAxis/Left"]
-margin_top = 13.0
-margin_right = 48.0
-margin_bottom = 27.0
+offset_top = 38.0
+offset_right = 56.0
+offset_bottom = 64.0
 text = "Device:"
 
 [node name="Devices" type="OptionButton" parent="InputSelector/MarginContainer/VBoxContainer/JoyAxis/Left"]
-margin_top = 31.0
-margin_right = 48.0
-margin_bottom = 51.0
+offset_top = 68.0
+offset_right = 56.0
+offset_bottom = 99.0
 
 [node name="Right" type="VBoxContainer" parent="InputSelector/MarginContainer/VBoxContainer/JoyAxis"]
-margin_left = 115.0
-margin_right = 228.0
-margin_bottom = 65.0
+offset_left = 472.0
+offset_right = 611.0
+offset_bottom = 138.0
 alignment = 1
 
 [node name="buttons" type="Label" parent="InputSelector/MarginContainer/VBoxContainer/JoyAxis/Right"]
-margin_top = 13.0
-margin_right = 113.0
-margin_bottom = 27.0
+offset_top = 38.0
+offset_right = 139.0
+offset_bottom = 64.0
 text = "Joypad axis index:"
 
 [node name="Buttons" type="OptionButton" parent="InputSelector/MarginContainer/VBoxContainer/JoyAxis/Right"]
-margin_top = 31.0
-margin_right = 113.0
-margin_bottom = 51.0
+offset_top = 68.0
+offset_right = 139.0
+offset_bottom = 99.0
 
 [node name="MouseButton" type="HBoxContainer" parent="InputSelector/MarginContainer/VBoxContainer"]
-margin_right = 292.0
-margin_bottom = 134.0
+offset_top = 426.0
+offset_right = 1024.0
+offset_bottom = 565.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 alignment = 1
-script = ExtResource( 12 )
+script = ExtResource( "12" )
 
 [node name="Left" type="VBoxContainer" parent="InputSelector/MarginContainer/VBoxContainer/MouseButton"]
-margin_left = 54.0
-margin_right = 102.0
-margin_bottom = 134.0
+offset_left = 402.0
+offset_right = 458.0
+offset_bottom = 139.0
 alignment = 1
 
 [node name="Device" type="Label" parent="InputSelector/MarginContainer/VBoxContainer/MouseButton/Left"]
-margin_top = 48.0
-margin_right = 48.0
-margin_bottom = 62.0
+offset_top = 39.0
+offset_right = 56.0
+offset_bottom = 65.0
 text = "Device:"
 
 [node name="Devices" type="OptionButton" parent="InputSelector/MarginContainer/VBoxContainer/MouseButton/Left"]
-margin_top = 66.0
-margin_right = 48.0
-margin_bottom = 86.0
+offset_top = 69.0
+offset_right = 56.0
+offset_bottom = 100.0
 
 [node name="Right" type="VBoxContainer" parent="InputSelector/MarginContainer/VBoxContainer/MouseButton"]
-margin_left = 106.0
-margin_right = 238.0
-margin_bottom = 134.0
+offset_left = 462.0
+offset_right = 622.0
+offset_bottom = 139.0
 alignment = 1
 
 [node name="buttons" type="Label" parent="InputSelector/MarginContainer/VBoxContainer/MouseButton/Right"]
-margin_top = 48.0
-margin_right = 132.0
-margin_bottom = 62.0
+offset_top = 39.0
+offset_right = 160.0
+offset_bottom = 65.0
 text = "Mouse button index:"
 
 [node name="Buttons" type="OptionButton" parent="InputSelector/MarginContainer/VBoxContainer/MouseButton/Right"]
-margin_top = 66.0
-margin_right = 132.0
-margin_bottom = 86.0
+offset_top = 69.0
+offset_right = 160.0
+offset_bottom = 100.0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="InputSelector/MarginContainer/VBoxContainer"]
-margin_top = 138.0
-margin_right = 292.0
-margin_bottom = 170.0
-rect_min_size = Vector2( 0, 32 )
-custom_constants/separation = 63
+offset_top = 569.0
+offset_right = 1024.0
+offset_bottom = 600.0
 alignment = 1
 
 [node name="Ok" type="Button" parent="InputSelector/MarginContainer/VBoxContainer/HBoxContainer"]
-margin_left = 72.0
-margin_right = 102.0
-margin_bottom = 32.0
+offset_left = 465.0
+offset_right = 495.0
+offset_bottom = 31.0
 text = "Ok"
 
 [node name="Cancel" type="Button" parent="InputSelector/MarginContainer/VBoxContainer/HBoxContainer"]
-margin_left = 165.0
-margin_right = 219.0
-margin_bottom = 32.0
+offset_left = 499.0
+offset_right = 559.0
+offset_bottom = 31.0
 text = "Cancel"
 
 [node name="AddInput" type="PopupPanel" parent="."]
-visible = true
-margin_left = -304.0
-margin_top = 59.0
-margin_right = -115.0
-margin_bottom = 179.0
+size = Vector2i(125, 144)
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -324,72 +291,59 @@ __meta__ = {
 [node name="MarginContainer" type="MarginContainer" parent="AddInput"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 4.0
-margin_top = 4.0
-margin_right = -4.0
-margin_bottom = -4.0
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 121.0
+offset_bottom = 140.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="VBoxContainer" type="VBoxContainer" parent="AddInput/MarginContainer"]
-margin_right = 181.0
-margin_bottom = 112.0
+offset_right = 1141.0
+offset_bottom = 736.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="Key" type="Button" parent="AddInput/MarginContainer/VBoxContainer"]
-margin_right = 181.0
-margin_bottom = 25.0
-rect_min_size = Vector2( 0, 25 )
+offset_right = 117.0
+offset_bottom = 31.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-custom_constants/hseparation = 4
 text = "Key"
-icon = ExtResource( 6 )
-align = 0
+icon = ExtResource( "6" )
 expand_icon = true
 
 [node name="JoyAxis" type="Button" parent="AddInput/MarginContainer/VBoxContainer"]
-margin_top = 29.0
-margin_right = 181.0
-margin_bottom = 54.0
-rect_min_size = Vector2( 0, 25 )
+offset_top = 35.0
+offset_right = 117.0
+offset_bottom = 66.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-custom_constants/hseparation = 4
 text = "Joy axis"
-icon = ExtResource( 7 )
-align = 0
+icon = ExtResource( "7" )
 expand_icon = true
 
 [node name="JoyButton" type="Button" parent="AddInput/MarginContainer/VBoxContainer"]
-margin_top = 58.0
-margin_right = 181.0
-margin_bottom = 83.0
-rect_min_size = Vector2( 0, 25 )
+offset_top = 70.0
+offset_right = 117.0
+offset_bottom = 101.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-custom_constants/hseparation = 4
 text = "Joy button"
-icon = ExtResource( 8 )
-align = 0
+icon = ExtResource( "8" )
 expand_icon = true
 
 [node name="MouseButton" type="Button" parent="AddInput/MarginContainer/VBoxContainer"]
-margin_top = 87.0
-margin_right = 181.0
-margin_bottom = 112.0
-rect_min_size = Vector2( 0, 25 )
+offset_top = 105.0
+offset_right = 117.0
+offset_bottom = 136.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-custom_constants/hseparation = 4
 text = "Mouse button"
-icon = ExtResource( 9 )
-align = 0
+icon = ExtResource( "9" )
 expand_icon = true
 
-[connection signal="about_to_show" from="." to="MarginContainer/VBoxContainer/ActionList/MarginContainer/Tree" method="on_popup"]
 [connection signal="add_action" from="MarginContainer/VBoxContainer/AddAction" to="MarginContainer/VBoxContainer/ActionList/MarginContainer/Tree" method="add_action_to_tree"]
 [connection signal="text_changed" from="MarginContainer/VBoxContainer/AddAction/LineEdit" to="MarginContainer/VBoxContainer/AddAction" method="_on_LineEdit_text_changed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/AddAction/Add" to="MarginContainer/VBoxContainer/AddAction" method="_on_Add_pressed"]
@@ -397,8 +351,6 @@ expand_icon = true
 [connection signal="pressed" from="MarginContainer/VBoxContainer/ApplyRevert/Apply" to="MarginContainer/VBoxContainer/ApplyRevert" method="_on_Apply_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/ApplyRevert/Revert" to="MarginContainer/VBoxContainer/ApplyRevert" method="_on_Revert_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/ApplyRevert/Cancel" to="MarginContainer/VBoxContainer/ApplyRevert" method="_on_Cancel_pressed"]
-[connection signal="about_to_show" from="InputSelector" to="InputSelector" method="_on_EditInputPopup_about_to_show"]
-[connection signal="popup_hide" from="InputSelector" to="InputSelector" method="_on_EditInputPopup_popup_hide"]
 [connection signal="item_selected" from="InputSelector/MarginContainer/VBoxContainer/JoyButton/Left/Devices" to="InputSelector/MarginContainer/VBoxContainer/JoyButton" method="_on_Devices_item_selected"]
 [connection signal="item_selected" from="InputSelector/MarginContainer/VBoxContainer/JoyButton/Right/Buttons" to="InputSelector/MarginContainer/VBoxContainer/JoyButton" method="_on_Buttons_item_selected"]
 [connection signal="item_selected" from="InputSelector/MarginContainer/VBoxContainer/JoyAxis/Left/Devices" to="InputSelector/MarginContainer/VBoxContainer/JoyAxis" method="_on_Devices_item_selected"]
@@ -407,7 +359,3 @@ expand_icon = true
 [connection signal="item_selected" from="InputSelector/MarginContainer/VBoxContainer/MouseButton/Right/Buttons" to="InputSelector/MarginContainer/VBoxContainer/MouseButton" method="_on_Buttons_item_selected"]
 [connection signal="pressed" from="InputSelector/MarginContainer/VBoxContainer/HBoxContainer/Ok" to="InputSelector" method="_on_Ok_pressed"]
 [connection signal="pressed" from="InputSelector/MarginContainer/VBoxContainer/HBoxContainer/Cancel" to="InputSelector" method="_on_Cancel_pressed"]
-[connection signal="pressed" from="AddInput/MarginContainer/VBoxContainer/Key" to="." method="_on_Key_pressed"]
-[connection signal="pressed" from="AddInput/MarginContainer/VBoxContainer/JoyAxis" to="." method="_on_JoyAxis_pressed"]
-[connection signal="pressed" from="AddInput/MarginContainer/VBoxContainer/JoyButton" to="." method="_on_JoyButton_pressed"]
-[connection signal="pressed" from="AddInput/MarginContainer/VBoxContainer/MouseButton" to="." method="_on_MouseButton_pressed"]

@@ -1,8 +1,8 @@
-extends WindowDialog
+extends Window
 
-onready var InputTree : Tree = $MarginContainer/VBoxContainer/ActionList/MarginContainer/Tree
-onready var InputSelector : WindowDialog = $InputSelector
-onready var AddInput : PopupPanel = $AddInput
+@onready var InputTree : Tree = $MarginContainer/VBoxContainer/ActionList/MarginContainer/Tree
+@onready var InputSelector : Window = $InputSelector
+@onready var AddInput : PopupPanel = $AddInput
 
 var edit_type : String = ""
 var edit_item : TreeItem
@@ -35,7 +35,7 @@ func return_input(event : InputEvent) -> void:
 
 func add_input(item : TreeItem) -> void:
 	edit_item = item
-	AddInput.popup(Rect2(get_global_mouse_position(), Vector2(180, 40)))
+	AddInput.popup(Rect2(get_mouse_position(), Vector2(180, 40)))
 
 func edit_input(item : TreeItem) -> void:
 	edit_item = item

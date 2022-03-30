@@ -1,7 +1,7 @@
 extends HBoxContainer
 
-onready var Devices : OptionButton = $Left/Devices
-onready var Buttons : OptionButton = $Right/Buttons
+@onready var Devices : OptionButton = $Left/Devices
+@onready var Buttons : OptionButton = $Right/Buttons
 
 var event : InputEvent
 
@@ -14,10 +14,10 @@ func _ready() -> void:
 	for i in range(20):
 		if i % 2 == 0:
 # warning-ignore:integer_division
-			Buttons.add_item("Axis " + str(i / 2) + " -")
+			Buttons.add_item("Axis " + str(i / 2.0) + " -")
 		else:
 # warning-ignore:integer_division
-			Buttons.add_item("Axis " + str(i / 2) + " +")
+			Buttons.add_item("Axis " + str(i / 2.0) + " +")
 		
 	
 	event = InputEventJoypadMotion.new()

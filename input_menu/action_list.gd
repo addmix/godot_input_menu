@@ -2,7 +2,7 @@ extends Tree
 
 #needs to be integrated into currently existing settings system
 
-onready var InputMenu : WindowDialog = find_parent("InputMenu")
+@onready var InputMenu : Window = find_parent("InputMenu")
 
 var root : TreeItem
 
@@ -30,9 +30,9 @@ func rebuild() -> void:
 	set_column_expand(2, false)
 	
 	#minimum widths
-	set_column_min_width(0, 140)
-	set_column_min_width(1, 80)
-	set_column_min_width(2, 64)
+	set_column_custom_minimum_width(0, 140)
+	set_column_custom_minimum_width(1, 80)
+	set_column_custom_minimum_width(2, 64)
 	
 	#disable root folding
 	root.set_disable_folding(true)

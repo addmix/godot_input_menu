@@ -1,13 +1,13 @@
-extends WindowDialog
+extends Window
 
-onready var InputMenu : WindowDialog = get_parent()
-onready var display_text : Label = $MarginContainer/VBoxContainer/KeyInput
-onready var vbox : VBoxContainer = $MarginContainer/VBoxContainer
+@onready var InputMenu : Window = get_parent()
+@onready var display_text : Label = $MarginContainer/VBoxContainer/KeyInput
+@onready var vbox : VBoxContainer = $MarginContainer/VBoxContainer
 
-onready var Key = $MarginContainer/VBoxContainer/KeyInput
-onready var JoyButton = $MarginContainer/VBoxContainer/JoyButton
-onready var JoyAxis = $MarginContainer/VBoxContainer/JoyAxis
-onready var MouseButton = $MarginContainer/VBoxContainer/MouseButton
+@onready var Key = $MarginContainer/VBoxContainer/KeyInput
+@onready var JoyButton = $MarginContainer/VBoxContainer/JoyButton
+@onready var JoyAxis = $MarginContainer/VBoxContainer/JoyAxis
+@onready var MouseButton = $MarginContainer/VBoxContainer/MouseButton
 
 var shown_type
 
