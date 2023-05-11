@@ -22,3 +22,5 @@ func _on_Add_pressed() -> void:
 	InputMap.add_action(_LineEdit.text)
 	#tell input editor UI that we added a new action
 	emit_signal("add_action", _LineEdit.text)
+	#clear line edit
+	_LineEdit.text = ""

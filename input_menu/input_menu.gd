@@ -40,7 +40,11 @@ func add_input(item : TreeItem) -> void:
 func edit_input(item : TreeItem) -> void:
 	edit_item = item
 	edit_type = edit_item.get_metadata(0)["type"]
-	print(edit_type)
+	InputSelector.popup_centered()
+
+func _on_Physical_Key_pressed() -> void:
+	AddInput.hide()
+	edit_type = "InputEventKey"
 	InputSelector.popup_centered()
 
 func _on_Key_pressed() -> void:

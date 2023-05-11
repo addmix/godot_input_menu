@@ -12,7 +12,7 @@ func _ready() -> void:
 		Devices.add_item("Device " + str(i), i)
 	Devices.selected = 1
 	
-	for i in range(22):
+	for i in range(128):
 		Buttons.add_item(str(i) + ":")
 	
 	event = InputEventJoypadButton.new()

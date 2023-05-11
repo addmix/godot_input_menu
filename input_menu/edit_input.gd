@@ -16,6 +16,7 @@ var edit_event : InputEvent
 func _ready() -> void:
 	call_deferred("deferred")
 
+#remove children, so that there is only the one desired input menu
 func deferred() -> void:
 	vbox.remove_child(Key)
 	vbox.remove_child(JoyButton)
@@ -24,7 +25,6 @@ func deferred() -> void:
 
 func _on_Ok_pressed() -> void:
 	InputMenu.return_input(shown_type.event)
-	
 	hide()
 
 func _on_Cancel_pressed() -> void:

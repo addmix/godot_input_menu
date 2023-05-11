@@ -1,11 +1,11 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://input_menu/input_menu.gd" type="Script" id=1]
 [ext_resource path="res://input_menu/add_action.gd" type="Script" id=2]
 [ext_resource path="res://input_menu/apply_revert.gd" type="Script" id=3]
 [ext_resource path="res://input_menu/action_list.gd" type="Script" id=4]
 [ext_resource path="res://input_menu/edit_input.gd" type="Script" id=5]
-[ext_resource path="res://input_menu/icon_keyboard.svg" type="Texture" id=6]
+[ext_resource path="res://input_menu/KeyboardPhysical.svg" type="Texture" id=6]
 [ext_resource path="res://input_menu/icon_joy_axis.svg" type="Texture" id=7]
 [ext_resource path="res://input_menu/icon_joy_button.svg" type="Texture" id=8]
 [ext_resource path="res://input_menu/icon_mouse.svg" type="Texture" id=9]
@@ -13,6 +13,7 @@
 [ext_resource path="res://input_menu/joy_button.gd" type="Script" id=11]
 [ext_resource path="res://input_menu/mouse_button.gd" type="Script" id=12]
 [ext_resource path="res://input_menu/joy_axis.gd" type="Script" id=13]
+[ext_resource path="res://input_menu/Keyboard.svg" type="Texture" id=14]
 
 [node name="InputMenu" type="WindowDialog"]
 margin_right = 633.0
@@ -134,9 +135,6 @@ margin_right = 308.0
 margin_bottom = 123.0
 window_title = "Edit Input"
 script = ExtResource( 5 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="MarginContainer" type="MarginContainer" parent="InputSelector"]
 anchor_right = 1.0
@@ -153,11 +151,11 @@ __meta__ = {
 margin_left = 8.0
 margin_top = 8.0
 margin_right = 300.0
-margin_bottom = 115.0
+margin_bottom = 234.0
 
 [node name="KeyInput" type="Label" parent="InputSelector/MarginContainer/VBoxContainer"]
 margin_right = 292.0
-margin_bottom = 92.0
+margin_bottom = 64.0
 rect_min_size = Vector2( 0, 64 )
 size_flags_vertical = 3
 text = "Press a key..."
@@ -166,8 +164,9 @@ valign = 1
 script = ExtResource( 10 )
 
 [node name="JoyButton" type="HBoxContainer" parent="InputSelector/MarginContainer/VBoxContainer"]
+margin_top = 68.0
 margin_right = 292.0
-margin_bottom = 42.0
+margin_bottom = 106.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 alignment = 1
@@ -176,40 +175,39 @@ script = ExtResource( 11 )
 [node name="Left" type="VBoxContainer" parent="InputSelector/MarginContainer/VBoxContainer/JoyButton"]
 margin_left = 55.0
 margin_right = 103.0
-margin_bottom = 42.0
+margin_bottom = 38.0
 alignment = 1
 
 [node name="Device" type="Label" parent="InputSelector/MarginContainer/VBoxContainer/JoyButton/Left"]
-margin_top = 2.0
 margin_right = 48.0
-margin_bottom = 16.0
+margin_bottom = 14.0
 text = "Device:"
 
 [node name="Devices" type="OptionButton" parent="InputSelector/MarginContainer/VBoxContainer/JoyButton/Left"]
-margin_top = 20.0
+margin_top = 18.0
 margin_right = 48.0
-margin_bottom = 40.0
+margin_bottom = 38.0
 
 [node name="Right" type="VBoxContainer" parent="InputSelector/MarginContainer/VBoxContainer/JoyButton"]
 margin_left = 107.0
 margin_right = 237.0
-margin_bottom = 42.0
+margin_bottom = 38.0
 alignment = 1
 
 [node name="buttons" type="Label" parent="InputSelector/MarginContainer/VBoxContainer/JoyButton/Right"]
-margin_top = 2.0
 margin_right = 130.0
-margin_bottom = 16.0
+margin_bottom = 14.0
 text = "Joypad button index:"
 
 [node name="Buttons" type="OptionButton" parent="InputSelector/MarginContainer/VBoxContainer/JoyButton/Right"]
-margin_top = 20.0
+margin_top = 18.0
 margin_right = 130.0
-margin_bottom = 40.0
+margin_bottom = 38.0
 
 [node name="JoyAxis" type="HBoxContainer" parent="InputSelector/MarginContainer/VBoxContainer"]
+margin_top = 110.0
 margin_right = 292.0
-margin_bottom = 65.0
+margin_bottom = 148.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 alignment = 1
@@ -218,40 +216,39 @@ script = ExtResource( 13 )
 [node name="Left" type="VBoxContainer" parent="InputSelector/MarginContainer/VBoxContainer/JoyAxis"]
 margin_left = 63.0
 margin_right = 111.0
-margin_bottom = 65.0
+margin_bottom = 38.0
 alignment = 1
 
 [node name="Device" type="Label" parent="InputSelector/MarginContainer/VBoxContainer/JoyAxis/Left"]
-margin_top = 13.0
 margin_right = 48.0
-margin_bottom = 27.0
+margin_bottom = 14.0
 text = "Device:"
 
 [node name="Devices" type="OptionButton" parent="InputSelector/MarginContainer/VBoxContainer/JoyAxis/Left"]
-margin_top = 31.0
+margin_top = 18.0
 margin_right = 48.0
-margin_bottom = 51.0
+margin_bottom = 38.0
 
 [node name="Right" type="VBoxContainer" parent="InputSelector/MarginContainer/VBoxContainer/JoyAxis"]
 margin_left = 115.0
 margin_right = 228.0
-margin_bottom = 65.0
+margin_bottom = 38.0
 alignment = 1
 
 [node name="buttons" type="Label" parent="InputSelector/MarginContainer/VBoxContainer/JoyAxis/Right"]
-margin_top = 13.0
 margin_right = 113.0
-margin_bottom = 27.0
+margin_bottom = 14.0
 text = "Joypad axis index:"
 
 [node name="Buttons" type="OptionButton" parent="InputSelector/MarginContainer/VBoxContainer/JoyAxis/Right"]
-margin_top = 31.0
+margin_top = 18.0
 margin_right = 113.0
-margin_bottom = 51.0
+margin_bottom = 38.0
 
 [node name="MouseButton" type="HBoxContainer" parent="InputSelector/MarginContainer/VBoxContainer"]
+margin_top = 152.0
 margin_right = 292.0
-margin_bottom = 134.0
+margin_bottom = 190.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 alignment = 1
@@ -260,41 +257,39 @@ script = ExtResource( 12 )
 [node name="Left" type="VBoxContainer" parent="InputSelector/MarginContainer/VBoxContainer/MouseButton"]
 margin_left = 54.0
 margin_right = 102.0
-margin_bottom = 134.0
+margin_bottom = 38.0
 alignment = 1
 
 [node name="Device" type="Label" parent="InputSelector/MarginContainer/VBoxContainer/MouseButton/Left"]
-margin_top = 48.0
 margin_right = 48.0
-margin_bottom = 62.0
+margin_bottom = 14.0
 text = "Device:"
 
 [node name="Devices" type="OptionButton" parent="InputSelector/MarginContainer/VBoxContainer/MouseButton/Left"]
-margin_top = 66.0
+margin_top = 18.0
 margin_right = 48.0
-margin_bottom = 86.0
+margin_bottom = 38.0
 
 [node name="Right" type="VBoxContainer" parent="InputSelector/MarginContainer/VBoxContainer/MouseButton"]
 margin_left = 106.0
 margin_right = 238.0
-margin_bottom = 134.0
+margin_bottom = 38.0
 alignment = 1
 
 [node name="buttons" type="Label" parent="InputSelector/MarginContainer/VBoxContainer/MouseButton/Right"]
-margin_top = 48.0
 margin_right = 132.0
-margin_bottom = 62.0
+margin_bottom = 14.0
 text = "Mouse button index:"
 
 [node name="Buttons" type="OptionButton" parent="InputSelector/MarginContainer/VBoxContainer/MouseButton/Right"]
-margin_top = 66.0
+margin_top = 18.0
 margin_right = 132.0
-margin_bottom = 86.0
+margin_bottom = 38.0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="InputSelector/MarginContainer/VBoxContainer"]
-margin_top = 138.0
+margin_top = 194.0
 margin_right = 292.0
-margin_bottom = 170.0
+margin_bottom = 226.0
 rect_min_size = Vector2( 0, 32 )
 custom_constants/separation = 63
 alignment = 1
@@ -334,26 +329,39 @@ __meta__ = {
 
 [node name="VBoxContainer" type="VBoxContainer" parent="AddInput/MarginContainer"]
 margin_right = 181.0
-margin_bottom = 112.0
+margin_bottom = 141.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="Key" type="Button" parent="AddInput/MarginContainer/VBoxContainer"]
+[node name="PhysicalKey" type="Button" parent="AddInput/MarginContainer/VBoxContainer"]
 margin_right = 181.0
 margin_bottom = 25.0
 rect_min_size = Vector2( 0, 25 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_constants/hseparation = 4
-text = "Key"
+text = "Physical Key"
 icon = ExtResource( 6 )
 align = 0
 expand_icon = true
 
-[node name="JoyAxis" type="Button" parent="AddInput/MarginContainer/VBoxContainer"]
+[node name="Key" type="Button" parent="AddInput/MarginContainer/VBoxContainer"]
 margin_top = 29.0
 margin_right = 181.0
 margin_bottom = 54.0
+rect_min_size = Vector2( 0, 25 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/hseparation = 4
+text = "Key"
+icon = ExtResource( 14 )
+align = 0
+expand_icon = true
+
+[node name="JoyAxis" type="Button" parent="AddInput/MarginContainer/VBoxContainer"]
+margin_top = 58.0
+margin_right = 181.0
+margin_bottom = 83.0
 rect_min_size = Vector2( 0, 25 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -364,9 +372,9 @@ align = 0
 expand_icon = true
 
 [node name="JoyButton" type="Button" parent="AddInput/MarginContainer/VBoxContainer"]
-margin_top = 58.0
+margin_top = 87.0
 margin_right = 181.0
-margin_bottom = 83.0
+margin_bottom = 112.0
 rect_min_size = Vector2( 0, 25 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -377,9 +385,9 @@ align = 0
 expand_icon = true
 
 [node name="MouseButton" type="Button" parent="AddInput/MarginContainer/VBoxContainer"]
-margin_top = 87.0
+margin_top = 116.0
 margin_right = 181.0
-margin_bottom = 112.0
+margin_bottom = 141.0
 rect_min_size = Vector2( 0, 25 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -407,6 +415,7 @@ expand_icon = true
 [connection signal="item_selected" from="InputSelector/MarginContainer/VBoxContainer/MouseButton/Right/Buttons" to="InputSelector/MarginContainer/VBoxContainer/MouseButton" method="_on_Buttons_item_selected"]
 [connection signal="pressed" from="InputSelector/MarginContainer/VBoxContainer/HBoxContainer/Ok" to="InputSelector" method="_on_Ok_pressed"]
 [connection signal="pressed" from="InputSelector/MarginContainer/VBoxContainer/HBoxContainer/Cancel" to="InputSelector" method="_on_Cancel_pressed"]
+[connection signal="pressed" from="AddInput/MarginContainer/VBoxContainer/PhysicalKey" to="." method="_on_Physical_Key_pressed"]
 [connection signal="pressed" from="AddInput/MarginContainer/VBoxContainer/Key" to="." method="_on_Key_pressed"]
 [connection signal="pressed" from="AddInput/MarginContainer/VBoxContainer/JoyAxis" to="." method="_on_JoyAxis_pressed"]
 [connection signal="pressed" from="AddInput/MarginContainer/VBoxContainer/JoyButton" to="." method="_on_JoyButton_pressed"]
