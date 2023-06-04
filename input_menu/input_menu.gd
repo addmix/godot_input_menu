@@ -62,3 +62,7 @@ func _on_MouseButton_pressed() -> void:
 	AddInput.hide()
 	edit_type = "InputEventMouseButton"
 	InputSelector.popup_centered()
+
+
+func _on_close_requested() -> void:
+	hide()

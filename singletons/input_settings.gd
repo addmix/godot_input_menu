@@ -23,7 +23,7 @@ func revert_settings() -> void:
 
 #revert settings to global defaults
 func cancel_settings() -> void:
-	InputMap.load_from_globals()
+	InputMap.load_from_project_settings()
 	apply_settings()
 
 func get_readable_string(input : InputEvent) -> String:

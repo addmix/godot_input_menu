@@ -12,11 +12,8 @@ var edit_texture = preload("res://input_menu/icon_edit.svg")
 
 var actions : Dictionary = {}
 
-func _ready() -> void:
-	#connect signal for when input is changed to the rebuild func
-	pass
 
-func on_popup() -> void:
+func _on_input_menu_about_to_popup():
 	rebuild()
 
 func rebuild() -> void:
@@ -38,18 +35,19 @@ func rebuild() -> void:
 	root.set_disable_folding(true)
 	#action column
 	root.set_text(0, "Action")
-	root.set_text_align(0, TreeItem.ALIGN_CENTER)
+	root.set_text_alignment(0, HORIZONTAL_ALIGNMENT_CENTER)
 	#deadzone column
 	root.set_text(1, "Deadzone")
-	root.set_text_align(1, TreeItem.ALIGN_CENTER)
+	root.set_text_alignment(1, HORIZONTAL_ALIGNMENT_CENTER)
 	
 	
 	#iterate through ActionEvents
 	var _actions : Array = InputMap.get_actions()
+	print(_actions)
 	for action in _actions:
 		add_action_to_tree(action)
 
-func _on_Tree_button_pressed(item : TreeItem, _column : int, id : int):
+func _on_Tree_button_pressed(item: TreeItem, _column: int, id: int, mouse_button_index: int):
 	match id:
 		#add
 		0:
@@ -102,7 +100,7 @@ func add_action_to_tree(action : String = "") -> void:
 	tree_action.set_range(1, InputMap.action_get_deadzone(action))
 	
 	#iterate through Actions of the current ActionEvent
-	var inputs : Array = InputMap.get_action_list(action)
+	var inputs : Array = InputMap.action_get_events(action)
 	for input in inputs:
 		add_input_to_tree(tree_action, input)
 
@@ -123,3 +121,5 @@ func set_input_data(tree_input : TreeItem, input : InputEvent) -> void:
 	tree_input.set_text(0, string)
 	#set input metadata
 	tree_input.set_metadata(0, {"type" : input.get_class(), "input" : input})
+
+
